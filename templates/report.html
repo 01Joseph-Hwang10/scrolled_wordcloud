@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wordcloud Generator For Urban Dictionary</title>
+        <!-- <link rel="stylesheet" type="text/css" href="main_style.css">
+        <script type="text/javascript" src="main.js"></script> -->
+        <style>
+            #input_name, #input_removings, #title, .return_container, #loading, #result, #return_button {
+                text-align: center;
+                margin-bottom: 5%;
+            }
+            #title, #info {
+                color: white;
+                display: block;
+                background-color: rgb(26,24,24);
+            }
+            .return_container {
+                background-color: whitesmoke;
+                padding-top: 5%;
+            }
+            label {
+                color: darkblue;
+                font-weight: bold;
+            }
+            #info {
+                font-weight: bold;
+                text-align: center;
+            }
+            .alert {
+                font-weight: bold;
+                text-align: center;
+            }
+            #loading {
+                background-color: skyblue;
+                display: none;
+            }
+            .styled {
+                border: 0;
+                line-height: 2.5;
+                padding: 0 20px;
+                font-size: 1rem;
+                text-align: center;
+                color: #fff;
+                text-shadow: 1px 1px 1px #000;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 220, 1);
+                background-image: linear-gradient(to top left,
+                                                  rgba(0, 0, 0, .2),
+                                                  rgba(0, 0, 0, .2) 30%,
+                                                  rgba(0, 0, 0, 0));
+                box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                            inset -2px -2px 3px rgba(0, 0, 0, .6);
+            }
+
+            .styled:hover {
+                background-color: rgba(0, 0, 255, 1);
+            }
+
+            .styled:active {
+                box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                            inset 2px 2px 3px rgba(0, 0, 0, .6);
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" 
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+        crossorigin="anonymous"></script>
+    </head>
+    <body>  
+        <header>
+            <h1 id='title'>Wordcloud Generator For Urban Dictionary</h1>
+        </header>
+        
+        <form action="/" method="GET" class="return_container">
+            <div class="return_container">
+                <button id="return_button" class="favorite styled" name="return_button" type="submit">New WordCloud</button>
+            </div>
+        </form>
+
+        <div id="result">
+            <!-- <img src="{{url_for('static', filename='wordcloud.png')}}" alt="WordCloud Image is currently not loaded!"> -->
+            <img id="result_wordcloud" src="/static/image/{{word_for_search}}/wordcloud_{{word_for_search}}_hash_{{removings_hash}}.png">
+            <!-- <img id="result_wordcloud" src="{{url_for('static', filename='image/{{word_for_search}}/wordcloud_{{word_for_search}}.png')}}"> -->
+        </div>
+
+        <footer>
+            <p id="info">Made by Joseph (Contact : joseph95501@gmail.com)</p>
+        </footer>
+    </body>
+</html>

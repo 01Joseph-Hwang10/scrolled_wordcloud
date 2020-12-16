@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wordcloud Generator For Urban Dictionary</title>
+        <!-- <link rel="stylesheet" type="text/css" href="main_style.css">
+        <script type="text/javascript" src="main.js"></script> -->
+        <style>
+            #input_name, #input_removings, #title, #input_container, #loading, #result {
+                text-align: center;
+                margin-bottom: 5%;
+            }
+            #title, #info {
+                color: white;
+                display: block;
+                background-color: rgb(26,24,24);
+            }
+            #input_container {
+                background-color: whitesmoke;
+            }
+            label {
+                color: darkblue;
+                font-weight: bold;
+            }
+            #info {
+                font-weight: bold;
+                text-align: center;
+            }
+            .alert {
+                font-weight: bold;
+                text-align: center;
+            }
+            #loading {
+                background-color: skyblue;
+                display: none;
+                text-align:center;
+            }
+            .styled {
+                border: 0;
+                line-height: 2.5;
+                padding: 0 20px;
+                font-size: 1rem;
+                text-align: center;
+                color: #fff;
+                text-shadow: 1px 1px 1px #000;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 220, 1);
+                background-image: linear-gradient(to top left,
+                                                  rgba(0, 0, 0, .2),
+                                                  rgba(0, 0, 0, .2) 30%,
+                                                  rgba(0, 0, 0, 0));
+                box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                            inset -2px -2px 3px rgba(0, 0, 0, .6);
+            }
+
+            .styled:hover {
+                background-color: rgba(0, 0, 255, 1);
+            }
+
+            .styled:active {
+                box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                            inset 2px 2px 3px rgba(0, 0, 0, .6);
+            }
+            .loader {
+                  border: 16px solid #f3f3f3; /* Light grey */
+                  border-top: 16px solid #3498db; /* Blue */
+                  border-bottom: 16px solid #3498db;
+                  border-radius: 50%;
+                  width: 120px;
+                  height: 120px;
+                  animation: spin 2s linear infinite;
+                  text-align: center;
+                }
+
+                @keyframes spin {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
+                }
+        </style>
+        <script>
+            function loadingPython(){
+              console.log("working...");
+            
+              var x = document.getElementById("loading");
+              x.style.display = "block";
+            };
+        </script>
+    </head>
+    <body>  
+        <header>
+            <h1 id='title'>Wordcloud Generator For Urban Dictionary</h1>
+        </header>
+        
+        <form action = "/report" method= "GET" id="input_container">
+            <div id="input_name">
+                <label for="word_for_search">Word For Search</label>
+                <input type="text" class="input_box" id="word_for_search" size="15" 
+                required name="word_for_search"/>
+            </div>
+            <div id="input_removings">
+                <label for="Removings">Excluding words</label>
+                <input type="text" class="input_box" id="Removings" size="50" 
+                name="Removings"/>
+            </div>
+            <div id="execute_button">
+                <button id="execute_python" class="favorite styled" onclick="loadingPython()">Generate a Wordcloud</button>
+            </div>
+        </form>
+
+        <div id="loading">
+            <h2 class="alert">Process ongoing...</h2>
+            <h3 class="alert">This can take a few minutes</h3>
+            <!-- <div class="loader"></div> -->
+        </div>
+
+        <footer>
+            <p id="info">Made by Joseph (Contact : joseph95501@gmail.com)</p>
+        </footer>
+    </body>
+</html>

@@ -4,8 +4,9 @@ import os
 import re
 from tqdm import tqdm
 import time
+import csv
 
-from functions import str_to_list
+from auxiliary import str_to_list
 
 
 def extract_total_pages(target_word):
@@ -83,5 +84,5 @@ def extract_meanings(target_word):
     f.write(container)
     f.close()
 
-    return container
+    return container, target_word
 
