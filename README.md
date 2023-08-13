@@ -17,16 +17,16 @@ Urban Dictionary에서 가져온 단어와 관련한 정보를 바탕으로 **�
 
 ## 키워드 입력
 
-![input-page](./showcase/input-page.png)
+![input-page](./static/showcase/input-page.png)
 
 ## 로딩 화면
 
-![loading-page](./showcase/loading-page.png)
+![loading-page](./static/showcase/loading-page.png)
 
 ## 결과 화면
 
-![result-page-1](./showcase/result-page-1.png)
-![result-page-2](./showcase/result-page-2.png)
+![result-page-1](./static/showcase/result-page-1.png)
+![result-page-2](./static/showcase/result-page-2.png)
 
 # 프로젝트의 경과
 
@@ -54,22 +54,22 @@ Flask를 통해 웹 서버를 구현하였습니다. ([server.py](./server.py) �
 
 ## Input Phase
 
-![input-page](./showcase/input-page.png)
+![input-page](./static/showcase/input-page.png)
 
 웹 서버는 사용자가 웹 페이지에 접속하면, 웹 페이지에 단어를 입력할 수 있는 input을 표시합니다. 
 또한 excluding word에는 워드클라우드에서 제외할 단어를 입력할 수 있습니다.
 
 ## Processing Phase
 
-![loading-page](./showcase/loading-page.png)
+![loading-page](./static/showcase/loading-page.png)
 
 "Generate a Wordcloud" 버튼을 클릭하면 Flask 서버에서 워드클라우드를 생성하는 동안 로딩 화면을 표시하게 됩니다.
 Flask는 [main.py](./main.py)를 실행시켜 워드클라우드를 생성하고, 생성된 워드클라우드를 static/image 폴더에 저장합니다.
 
 ## Result Phase
 
-![result-page-1](./showcase/result-page-1.png)
-![result-page-2](./showcase/result-page-2.png)
+![result-page-1](./static/showcase/result-page-1.png)
+![result-page-2](./static/showcase/result-page-2.png)
 
 워드클라우드 생성이 완료되면 Flask 서버는 이를 웹 페이지에 표시합니다.
 
